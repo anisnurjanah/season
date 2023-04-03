@@ -1,0 +1,529 @@
+:root {
+  --utama: #b6895b;
+  --bg: #010101;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Delicious Handrawn", sans-serif;
+  background-color: var(--bg);
+  color: beige;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid rgb(34, 34, 34);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: aliceblue;
+}
+
+.navbar .navbar-logo span {
+  color: var(--utama);
+}
+
+.navbar .navbar-nav a {
+  color: aliceblue;
+  display: inline-block;
+  font-size: 1.6rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--utama);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--utama);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: aliceblue;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--utama);
+}
+
+.navbar .mail {
+  text-align: center;
+  font-family: "Delicious Handrawn";
+  font-size: 1.3rem;
+}
+
+#menu {
+  display: none;
+}
+
+/* hero sect */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("images/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  justify-content: center;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0%;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 8%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.hero .content {
+  padding: 5rem 10%;
+  max-width: 60rem;
+  text-align: center;
+}
+
+.hero .content h1 {
+  font-size: 5em;
+  color: aliceblue;
+  text-shadow: 5x 5px 5px black;
+  font-weight: lighter;
+  text-shadow: 2px 2px 5px black;
+  text-decoration: underline var(--utama);
+}
+
+.hero .content p {
+  font-size: 1.7rem;
+  margin-top: 1rem;
+  font-weight: lighter;
+  text-shadow: 5px 5px 10px black;
+  color: white;
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.5rem;
+  color: aliceblue;
+  background-color: var(--utama);
+  border-radius: 1rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 1);
+  text-shadow: 5px 5px 5px rgba(1, 1, 3, 0.5);
+}
+
+/* about sect */
+
+.about,
+.mood {
+  padding: 6rem 7% 1.4rem;
+}
+
+.about h2,
+.feels h2,
+.mate h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.about h2 span,
+.feels h2 span,
+.mate h2 span {
+  color: var(--utama);
+}
+
+.about .row,
+.mood .mood-card {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 35rem;
+}
+
+.about .row .about-img img,
+.mood .mood-card .mood-img img {
+  width: 100%;
+}
+
+.about .row .content,
+.mood .mood-card .mood-content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 2em;
+  margin-bottom: 0.5rem;
+  font-weight: lighter;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: lighter;
+  text-align: justify;
+}
+
+/* feels section */
+
+.feels {
+  padding: 6rem 0% 1.4rem;
+}
+
+.feels h2,
+.mate h2 {
+  margin-bottom: 0.5rem;
+}
+
+.feels p,
+.mate p {
+  text-align: center;
+  max-width: 70rem;
+  margin: auto;
+  line-height: 1.2rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: bold;
+}
+
+.feels .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.feels .row .feels-card {
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.feels .row .feels-card img {
+  border-radius: 50%;
+  width: 50%;
+  margin-bottom: 0%;
+}
+
+.feels .row .feels-card .feels-card-title {
+  margin-top: 0rem auto 1rem;
+  font-family: "Snowburst One";
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.feels .row .feels-card .feels-card-feel {
+  max-width: 50%;
+  background-color: #b6895b;
+  margin-top: 0.5rem;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  padding: 0.2rem 0.5rem 0.5rem;
+  cursor: pointer;
+  font-family: "Delicious Handrawn";
+  font-weight: lighter;
+  text-shadow: 1px 1px 3px rgb(59, 59, 59);
+}
+
+/* mate section */
+.mate {
+  padding: 6rem 7% 1.4rem;
+}
+
+.mate .row {
+  display: flex;
+  margin-top: 0.5rem;
+  background-color: #222;
+}
+
+.mate .row .map {
+  flex: 1 1 45rem;
+  width: 50px;
+  height: auto;
+  object-fit: cover;
+}
+
+.mate .row form {
+  flex: 1 1 45rem;
+  padding: 0% 1rem 0.5rem;
+  text-align: center;
+}
+
+.mate .row form .input {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--bg);
+  border: 1px solid aliceblue;
+  padding-left: 2rem;
+}
+
+.mate .row form .input input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1rem;
+  background: none;
+  color: aliceblue;
+}
+
+.mate .row form .btn {
+  margin-top: 1.2rem;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  color: aliceblue;
+  background-color: var(--utama);
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: bold;
+}
+
+/* mail section */
+.mails {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("images/aaron-burden-Zl8zGdnNcP8-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  justify-content: center;
+}
+
+.mails h1 {
+  font-size: 5rem;
+  font-weight: lighter;
+  text-align: center;
+  text-shadow: 1px 1px 5px black;
+}
+
+/* book section */
+.books {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--utama);
+  position: relative;
+  justify-content: center;
+  text-decoration: none;
+}
+.books .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  justify-content: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.books .row .feels-card {
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.books .row .feels-card img {
+  border-radius: 50%;
+  width: 50%;
+  margin-bottom: 0%;
+}
+
+.books .row .feels-card .feels-card-title {
+  margin-top: 0rem auto 1rem;
+  font-family: "Snowburst One";
+  text-decoration: none;
+  color: aliceblue;
+}
+
+/* mood sect */
+
+.mood {
+  min-height: 100vh;
+  background-color: var(--utama);
+}
+
+.mood h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: lighter;
+  font-family: "Snowburst One";
+  margin-bottom: 1rem;
+  padding-top: 0.5rem;
+}
+
+.mood .mood-card .mood-img {
+  flex: 0 0.5 28rem;
+}
+
+.mood .mood-card .mood-content p {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-family: "Delicious Handrawn";
+  font-weight: lighter;
+  text-align: justify;
+}
+
+/* footer */
+footer {
+  background-color: var(--utama);
+  text-align: center;
+  padding: 1rem 0 3rem;
+  margin-top: 3rem;
+}
+
+footer .social {
+  padding: 1rem 0;
+}
+
+footer .social a {
+  color: aliceblue;
+  margin: 1rem;
+}
+
+footer .social a:hover {
+  color: var(--bg);
+}
+
+footer .link {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+footer .link a {
+  color: aliceblue;
+  padding: 0.5rem 1rem;
+}
+
+footer .link a:hover {
+  color: var(--bg);
+}
+
+footer .credit {
+  font-size: 1.5rem;
+  font-weight: lighter;
+  color: aliceblue;
+}
+
+footer .credit a {
+  color: burlywood;
+  text-shadow: 1px 1px 3px black;
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  #menu {
+    display: inline-block;
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: white;
+    width: 20rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+  .about .row {
+    flex-wrap: wrap;
+  }
+  .about .row .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+  .about .row .content {
+    padding: 0%;
+  }
+  .about .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+  .about .row .content p {
+    font-size: 1.6rem;
+  }
+  .feels p {
+    font-size: 1.2rem;
+  }
+  .mate .row {
+    flex-wrap: wrap;
+  }
+  .mate .row .map {
+    height: 30rem;
+  }
+  .mate .row form {
+    padding-top: 0;
+  }
+}
+
+/* hp */
+@media (max-width: 450px) {
+  html {
+    font-size: 50.5%;
+  }
+}
